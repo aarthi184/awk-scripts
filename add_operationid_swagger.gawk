@@ -1,4 +1,23 @@
 # gawk script
+# Many big Swagger files do not have operationId defined for each operation.
+# This script adds an operationId for each op by combining the 'path' and 'method' for each operation
+# Eg.
+# Original:
+# /api/1:
+#  get:
+#    ...
+#  post:
+#    ...
+#
+# Modified as:
+# /api/1:
+#  get:
+#    operationId: api_1_get
+#    ...
+#  post:
+#    operationId: api_1_post
+#    ...
+
 
 BEGIN {print "Hello";}
 
